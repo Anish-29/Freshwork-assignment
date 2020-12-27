@@ -16,7 +16,7 @@ if n==2:
     t2.join()#Thread 2 ends and waits for next thread to start
     t3.start()#Thread 3 starts
     t3.join()#Thread 3 ends and waits for next thread to start
-    print("Process completed!")  
+    print("Process completed!......")  
 else:
     d=input("Enter the directory")
     a=Data(d)
@@ -31,5 +31,5 @@ else:
     t2.join()#Thread 2 ends and waits for next thread to start
     t3.start()#Thread 3 starts
     t3.join()#Thread 3 ends and waits for next thread to start
-    print("Process completed!")
+    print("Process completed!.......")
     
