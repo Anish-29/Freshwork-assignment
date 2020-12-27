@@ -29,7 +29,7 @@ class Data:
                         if t!=0:
                             entry_time=int(time.time())+t
                         data[key]=[value,entry_time]
-                        json_data = json.dumps(data, indent=2) #converts the dictionary to Json 
+                        json_data = json.dumps(data) #converts the dictionary to Json 
                         with open(str(self.filo)+self.filename,"w") as f:
                             f.write(json_data) #writing the file
                         print("Success : Data is successfully created!")
@@ -59,57 +59,5 @@ class Data:
         else:
             print("Error : Key does not exist")
    
-if __name__=="__main__":
-    print("1.Enter the directory where you want to store your JSON file\n")
-    print("2.Store file in Current directory\n")
-    n=int(input("Enter the number: "))
-    if n==1:
-        s=input("Enter the directory: ")
-        obj=Data(s)
-        print("\n******************************************")
-        print("  1.Create.. 2.Read.. 3.Delete.. 4.Exit")
-        print("******************************************\n")
-        while(1):
-
-            process=int(input())
-            if process==1:
-                key=input("Enter the key: ")
-                value=int(input("Enter the value: "))
-                t=int(input("Enter the timestamp: "))
-                obj.create(key,value,t)
-            elif process==2:
-                key=input("Enter the key: ")
-                obj.read(key)
-            elif process==3:
-                key=input("Enter the key: ")
-                obj.delete(key)
-            else:
-                print("Process terminated......")
-                break
-    elif n==2:
-        obj=Data()
-        print("\n******************************************")
-        print("  1.Create.. 2.Read.. 3.Delete.. 4.Exit")
-        print("******************************************\n")
-        while(1):
-        
-            process=int(input())
-            if process==1:
-                key=input("Enter the key: ")
-                value=int(input("Enter the value: "))
-                t=int(input("Enter the timestamp: "))
-                obj.create(key,value,t)
-            elif process==2:
-                key=input("Enter the key: ")
-                obj.read(key)
-            elif process==3:
-                key=input("Enter the key: ")
-                obj.delete(key)
-            else:
-                print("Process terminated......")
-                break
-        
-    else:
-        print("\nProcess terminated....")
     
     
